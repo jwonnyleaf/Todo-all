@@ -10,7 +10,8 @@ function addTask(event) {
 
     db.collection("tasks").add({
         name: task.value,
-        status: "Active"
+        status: "Active",
+        created: firebase.firestore.FieldValue.serverTimestamp()
     })
     task.value = "";
 }
@@ -20,6 +21,7 @@ function displayError() {
 }
 
 function queryTasks() {
+    db.collection("tasks").orderBy("created");
     db.collection("tasks").onSnapshot((querySnapshot) => {
         var tasks = [];
         querySnapshot.forEach((doc) => {
@@ -35,12 +37,28 @@ function updateTasks(tasks) {
     tasks.forEach((task) => {
         let taskItem = document.createElement("div");
         taskItem.classList.add("task__item");
+        taskItem.setAttribute("id", task.id);
         let taskItemText = document.createElement("div");
         taskItemText.classList.add("task__item--text");
         taskItemText.innerText = task.name;
         let taskItemActions = document.createElement("div");
+        taskItemActions.classList.add("task__item--actions");
+        // let ActionEdit = document.createElement("button");
+        // ActionEdit.classList.add("item--edit");
+        // ActionEdit.innerText = "Edit";
+        
+        // Delete Task Logic
+        let ActionDelete = document.createElement("button");
+        ActionDelete.classList.add("item--delete");
+        ActionDelete.innerText = "Delete";
+        ActionDelete.addEventListener("click", (ev) => {
+            let taskID = ev.target.parentNode.parentNode.getAttribute("id");
+            db.collection("tasks").doc(taskID).delete();
+        })
 
         taskItem.appendChild(taskItemText);
+        // taskItemActions.appendChild(ActionEdit);
+        taskItemActions.appendChild(ActionDelete);
         taskItem.appendChild(taskItemActions);
         newTaskList.push(taskItem);
     })

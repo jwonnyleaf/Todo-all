@@ -28,12 +28,16 @@
 body {
     background-color: var(--background-color);
     display: flex;
+    flex-direction: column;
     max-width: 600px;
     margin: 0 auto;
     font-family: "Dosis";
     font-variation-settings: "wght" 800;
     letter-spacing: 1px;
     color: var(--white);
+}
+button {
+    cursor: pointer;
 }
 
 .header--title {
@@ -101,4 +105,19 @@ input, button {
     font-family: "OpenSans";
     font-variation-settings: "wght" 800;
     font-size: .9rem;
+    color: rgb(138, 134, 134);
+    -webkit-transition: transform .4s, color .5s;
+    -moz-transition: transform .4s, color .5s;
+    -ms-transition: transform .4s, color .5s;
+    -o-transition: transform .4s, color .5s;
+    transition: transform .4s, color .5s;
+}
+.item--edit, .item--delete:hover {
+    color: rgb(209, 82, 82);
+    transform: translateY(-2px);
+}
+#footer {
+    bottom: 0;
+    text-align: center;
+    
 }

@@ -11,4 +11,5 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
+firebase.firestore.FieldValue.serverTimestamp()
 const db = firebase.firestore();
