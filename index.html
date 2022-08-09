@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todoal App</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header--title">TODO-<span class="header--title-alt">ALL</span></div>
+        </div>
+        <div class="new-task__wrapper">
+            <div class="new-task__input">
+                <form novalidate onsubmit="addTask(event)" class="new-task--form">
+                    <input type="text" placeholder="Create a new to-do task..." id="task__user-input" required>
+                    <input type="submit" value="Add Task" id="task__submit">
+                </form>
+            </div>
+
+        </div>
+        <div class="task-list" id="task-list">
+            <div class="task__item">
+                <div class="task__item--text">
+                    Finish Todoal Project
+                </div>
+                <div class="task__item--actions">
+                    <button class="item--edit">Edit</button>
+                    <button class="item--delete">Delete</button>
+                </div>
+            </div>
+            <div class="task__item">
+                <div class="task__item--text">
+                    Drink Milk
+                </div>
+                <div class="task__item--actions">
+                    <button class="item--edit">Edit</button>
+                    <button class="item--delete">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="/js/firebase.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+:root {
+    --background-color: hsl(216, 6%, 15%);
+    --white: hsl(60, 4%, 91%);
+    --blue: hsl(214, 41%, 46%);
+    --purple: hsl(250, 87%, 66%);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+     box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Hikou';
+    src: url("/fonts/Hikou.otf");
+}
+@font-face {
+    font-family: 'Dosis';
+    src: url("/fonts/Dosis-VariableFont_wght.ttf");
+}
+@font-face {
+    font-family: 'OpenSans';
+    src: url("/fonts/OpenSans-VariableFont_wght.ttf");
+}
+
+body {
+    background-color: var(--background-color);
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: "Dosis";
+    font-variation-settings: "wght" 800;
+    letter-spacing: 1px;
+    color: var(--white);
+}
+
+.header--title {
+    font-family: "Hikou";
+    font-size: 6rem;
+    color: var(--white);
+    margin-top: 50px;
+}
+.header--title-alt {
+    color: var(--blue);
+}
+
+.new-task__wrapper {
+    width: 600px;
+}
+.new-task--form {
+    display: flex;
+
+}
+.new-task--form input::placeholder {
+    font-family: "Dosis";
+    font-size: 1rem;
+    font-variation-settings: "wght" 600;
+    letter-spacing: 1px;
+}
+input, button {
+    background: none;
+    outline: none; 
+    border: none;
+}
+
+#task__user-input {
+    flex: auto;
+    background-color: hsl(216, 37%, 26%);
+    color: var(--white);
+    padding: 18px;
+    border-radius: 25px;
+    margin: .5rem 1.5rem 0 0;
+}
+#task__submit {
+    color: var(--purple);
+    background: linear-gradient(to right, var(--blue), var(--purple));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "OpenSans";
+    font-variation-settings: "wght" 800;
+    font-size: 1rem;
+    cursor: pointer;
+}
+#task-list {
+    margin-top: 60px;
+}
+.task__item {
+    display: flex;
+    justify-content: space-between;
+    background-color: hsl(216, 37%, 26%);
+    color: var(--white);
+    font-size: 1rem;
+    padding: 18px;
+    border-radius: 25px;
+    margin: 0 1.5rem 1rem 0;
+}
+.item--edit, .item--delete {
+    font-family: "OpenSans";
+    font-variation-settings: "wght" 800;
+    font-size: .9rem;
+}
