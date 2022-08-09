@@ -14,7 +14,7 @@
         </div>
         <div class="new-task__wrapper">
             <div class="new-task__input">
-                <form novalidate onsubmit="addTask(event)" class="new-task--form">
+                <form novalidate onsubmit="addTask(event)" maxlength="40" class="new-task--form">
                     <input type="text" placeholder="Create a new to-do task..." id="task__user-input" required>
                     <input type="submit" value="Add Task" id="task__submit">
                 </form>

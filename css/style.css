@@ -101,7 +101,12 @@ input, button {
     border-radius: 25px;
     margin: 0 1.5rem 1rem 0;
 }
+.task__item--text {
+    width: 85%;
+    word-wrap: break-word;
+}
 .item--edit, .item--delete {
+    height: 100%;
     font-family: "OpenSans";
     font-variation-settings: "wght" 800;
     font-size: .9rem;

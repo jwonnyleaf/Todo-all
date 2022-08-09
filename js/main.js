@@ -4,7 +4,6 @@ function addTask(event) {
 
     // Input Validation
     if(!task.value) {
-        displayError();
         return;
     }
 
@@ -16,13 +15,8 @@ function addTask(event) {
     task.value = "";
 }
 
-function displayError() {
-
-}
-
 function queryTasks() {
-    db.collection("tasks").orderBy("created");
-    db.collection("tasks").onSnapshot((querySnapshot) => {
+    db.collection("tasks").orderBy("created", "desc").onSnapshot((querySnapshot) => {
         var tasks = [];
         querySnapshot.forEach((doc) => {
             tasks.push({id: doc.id, ...doc.data()});
@@ -66,4 +60,3 @@ function updateTasks(tasks) {
 }
 
 queryTasks();
-
